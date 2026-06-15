@@ -1,0 +1,19 @@
+/* Styles the superhero section headers */
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    border-bottom: 3px solid #e23636;
+    padding-bottom: 10px;
+}
+
+/* Styles individual hero names */
+h2 {
+    color: #2f3542;
+    margin-top: 15px;
+}
+
+/* Spaces out the paragraphs nicely */
+p {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
