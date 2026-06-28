@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2c3e50; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.canvas {
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b); 
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* This is a circle/oval which is being used for the setting sun in the background */
+.sun {
+    width: 120px;
+    height: 120px;
+    background-color: #fffcce;
+    border-radius: 50%; 
+    position: absolute;
+    bottom: 180px;
+    left: 150px;
+    box-shadow: 0 0 40px #fffcce;
+}
+
+/* This is a circle/oval which is being used for a puffy cloud on the left side */
+.cloud-left {
+    width: 180px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50px; 
+    position: absolute;
+    top: 80px;
+    left: 80px;
+}
+
+/* This is a circle/oval which is being used for a puffy cloud on the right side */
+.cloud-right {
+    width: 220px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    position: absolute;
+    top: 120px;
+    right: 100px;
+}
+
+/* This is a rectangle/square which is being used for the rolling hills/ground */
+.ground {
+    width: 100%;
+    height: 150px;
+    background-color: #2e5c32; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+/* This is a rectangle/square which is being used for the main body/base of the house */
+.house-base {
+    width: 200px;
+    height: 140px;
+    background-color: #d35400; 
+    position: absolute;
+    bottom: 80px;
+    left: 450px;
+    z-index: 2;
+}
+
+/* This is a rectangle/square which is being used for the front door of the house */
+.door {
+    width: 45px;
+    height: 80px;
+    background-color: #7f8c8d; 
+    position: absolute;
+    bottom: 80px;
+    left: 528px;
+    z-index: 3;
+}
+
+/* This is a rectangle/square which is being used for the left window */
+.window-left {
+    width: 40px;
+    height: 40px;
+    background-color: #f1c40f; 
+    border: 3px solid #7f8c8d;
+    position: absolute;
+    bottom: 150px;
+    left: 475px;
+    z-index: 3;
+}
+
+/* This is a rectangle/square which is being used for the right window */
+.window-right {
+    width: 40px;
+    height: 40px;
+    background-color: #f1c40f;
+    border: 3px solid #7f8c8d;
+    position: absolute;
+    bottom: 150px;
+    left: 585px;
+    z-index: 3;
+}
+
+/* This is a rectangle/square which is being used for the trunk of the tree */
+.tree-trunk {
+    width: 20px;
+    height: 100px;
+    background-color: #5c3a21; 
+    position: absolute;
+    bottom: 120px;
+    left: 200px;
+    z-index: 2;
+}
+
+/* This is a triangle which is being used for the roof of the house */
+.house-roof {
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;  
+    border-right: 120px solid transparent; 
+    border-bottom: 80px solid #c0392b;    
+    position: absolute;
+    bottom: 220px;
+    left: 430px;
+    z-index: 3;
+}
+
+/* This is an "odd" shape. It's an asymmetrical teardrop/leaf shape being used for the tree's foliage canopy. */
+.tree-leaves {
+    width: 130px;
+    height: 130px;
+    background-color: #27ae60; 
+    border-radius: 50% 50% 50% 10%; 
+    transform: rotate(-45deg); 
+    position: absolute;
+    bottom: 190px;
+    left: 145px;
+    z-index: 3;
+}
+
+/* This is an "odd" shape. It's a low semi-oval shape used for a decorative bush on the left side of the house */
+.bush-left {
+    width: 90px;
+    height: 50px;
+    background-color: #1e824c;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    bottom: 130px;
+    left: 400px;
+    z-index: 3;
+}
+
+/* This is an "odd" shape. It's an irregular bush shape used for a decorative bush on the right side of the house */
+.bush-right {
+    width: 70px;
+    height: 60px;
+    background-color: #1e824c;
+    border-radius: 40px 60px 0 0; 
+    position: absolute;
+    bottom: 125px;
+    left: 630px;
+    z-index: 3;
+}
+
+/* This is a rectangle/square which is being used for fence post #1 */
+.fence-post-1 {
+    width: 10px;
+    height: 45px;
+    background-color: #f39c12;
+    position: absolute;
+    bottom: 100px;
+    left: 320px;
+    z-index: 2;
+}
+
+/* This is a rectangle/square which is being used for fence post #2 */
+.fence-post-2 {
+    width: 10px;
+    height: 45px;
+    background-color: #f39c12;
+    position: absolute;
+    bottom: 100px;
+    left: 345px;
+    z-index: 2;
+}
+
+/* This is a rectangle/square which is being used for fence post #3 */
+.fence-post-3 {
+    width: 10px;
+    height: 45px;
+    background-color: #f39c12;
+    position: absolute;
+    bottom: 100px;
+    left: 370px;
+    z-index: 2;
+}
