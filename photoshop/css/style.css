@@ -1,0 +1,121 @@
+/* ==========================================
+   Global Resets and Layout Base Definitions
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000; /* Requirement: Everything else is black */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+/* Base application structural wrapper */
+.wordle-app {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================
+   Header Configuration Styles
+   ========================================== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #d3d6da;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #000000;
+  padding: 5px;
+}
+
+/* ==========================================
+   Main Game Board Layout (5x6 Grid)
+   ========================================== */
+.grid-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 6px;
+  width: 330px;
+  height: 400px;
+  margin-bottom: 40px;
+}
+
+/* Requirement: Square borders must be #d3d6da */
+.board-tile {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #d3d6da; 
+  background-color: #ffffff;
+}
+
+/* ==========================================
+   Input Virtual Keyboard Styles
+   ========================================== */
+.virtual-keyboard {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.keyboard-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Requirement: Key background colors must be #d3d6da */
+.letter-key {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+  height: 58px;
+  background-color: #d3d6da; 
+  color: #000000; 
+  border: none;
+  border-radius: 4px;
+  margin: 0 3px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Proportional padding rules for broad navigation keys */
+.letter-key.control-key {
+  flex: 1.5;
+  font-size: 0.85rem;
+}
+
+/* Spatial layout utility offset for center row */
+.row-spacer {
+  flex: 0.5;
+}
