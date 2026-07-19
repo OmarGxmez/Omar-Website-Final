@@ -1,0 +1,69 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    font-size: 1.4rem;
+    color: #34495e;
+}
+
+#displayName {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.info-box {
+    background-color: #f8fafc;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+    border-radius: 0 8px 8px 0;
+}
+
+.info-box p {
+    margin: 8px 0;
+    color: #475569;
+}
+
+.info-box span {
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.summary-paragraph {
+    font-style: italic;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 20px;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 15px;
+}
