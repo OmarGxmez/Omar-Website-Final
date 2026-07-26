@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mad Libs Story Generator</h1>
+        <p class="subtitle">Fill in the fields below or click "Randomize Words" to auto-fill them!</p>
+
+        <form id="madlib-form">
+            <div class="form-group">
+                <label for="noun1">Noun 1 (Thing/Object):</label>
+                <input type="text" id="noun1" placeholder="e.g., laptop" required>
+            </div>
+
+            <div class="form-group">
+                <label for="noun2">Noun 2 (Place/Thing):</label>
+                <input type="text" id="noun2" placeholder="e.g., coffee shop" required>
+            </div>
+
+            <div class="form-group">
+                <label for="verb1">Verb 1 (Past-Tense Action):</label>
+                <input type="text" id="verb1" placeholder="e.g., sprinted" required>
+            </div>
+
+            <div class="form-group">
+                <label for="verb2">Verb 2 (Past-Tense Action):</label>
+                <input type="text" id="verb2" placeholder="e.g., screamed" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adj1">Adjective 1 (Descriptive word):</label>
+                <input type="text" id="adj1" placeholder="e.g., shiny" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adj2">Adjective 2 (Descriptive word):</label>
+                <input type="text" id="adj2" placeholder="e.g., exhausted" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="submit-btn">Create Story</button>
+                <button type="button" id="random-btn">Randomize Words</button>
+            </div>
+        </form>
+
+        <!-- Story Output Section -->
+        <div id="story-container" class="hidden">
+            <h2>Your Mad Lib Story</h2>
+            <p id="story-text"></p>
+        </div>
+    </div>
+</body>
+</html>
