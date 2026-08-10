@@ -3,82 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite YouTube Videos</title>
+    <title>Omar Gomez | Front-End Developer Portfolio</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Advanced Content: Infinite subtle CSS background animation */
+        @keyframes subtleGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #f8f9fa, #e9ecef, #dee2e6, #f8f9fa);
+            background-size: 400% 400%;
+            animation: subtleGradient 15s ease infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: white;
+            padding: 80px 20px;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-custom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 1rem;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .quote-box {
+            background: white;
+            border-left: 5px solid #6c757d;
+            border-radius: 0.5rem;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Omar Gomez's Video Collection</h1>
-    <h2>CSIS 1430 - Tables Assignment</h2>
+    <!-- Navigation Menu (Bootstrap Navbar with Hamburger Toggle) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fa-solid fa-code me-2"></i>Omar Gomez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reflection">Reflection</a></li>
+                    <!-- Advanced Content: Natural Audio Integration Component -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="audioToggleBtn" class="btn btn-outline-light btn-sm rounded-pill px-3" onclick="toggleAmbientAudio()">
+                            <i class="fa-solid fa-volume-xmark me-1" id="audioIcon"></i> <span id="audioText">Ambient Audio: Off</span>
+                        </button>
+                        <!-- Hidden audio element playing a natural ambient coffee shop vibe stream -->
+                        <audio id="ambientAudio" loop>
+                            <source src="https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg" type="audio/ogg">
+                        </audio>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <table border="1" cellpadding="8" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Video Name</th>
-                <th>Video Description</th>
-                <th>Video Length</th>
-                <th>Thumbnail Preview</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Classic Pop Track</a></td>
-                <td>A legendary 80s dance-pop track with an iconic music video.</td>
-                <td>3:32</td>
-                <td><img src="https://picsum.photos/100" alt="Video 1" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target="_blank">Lo-Fi Beats Session</a></td>
-                <td>Relaxing beats to study, code, or chill out to. Perfect background vibes.</td>
-                <td>2:00:00</td>
-                <td><img src="https://picsum.photos/101" alt="Video 2" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">HTML Crash Course</a></td>
-                <td>Learn the absolute basics of HTML tags, elements, and attributes in one hour.</td>
-                <td>1:02:15</td>
-                <td><img src="https://picsum.photos/102" alt="Video 3" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">Python Programming for Beginners</a></td>
-                <td>An easy introduction to lists, dictionaries, and functions in Python.</td>
-                <td>45:30</td>
-                <td><img src="https://picsum.photos/103" alt="Video 4" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">Linux Terminal Basics</a></td>
-                <td>A quick breakdown of navigating folders using standard bash shell commands.</td>
-                <td>15:45</td>
-                <td><img src="https://picsum.photos/104" alt="Video 5" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">Cisco Switch Setup Tutorial</a></td>
-                <td>How to configure your very first physical Cisco network switch interface.</td>
-                <td>22:10</td>
-                <td><img src="https://picsum.photos/105" alt="Video 6" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">PC Cable Management Guide</a></td>
-                <td>How to keep the inside of your workstation looking clean and running cool.</td>
-                <td>12:35</td>
-                <td><img src="https://picsum.photos/106" alt="Video 7" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">Web Usability Research</a></td>
-                <td>A dive into why scannability and eye-tracking matter for landing pages.</td>
-                <td>18:20</td>
-                <td><img src="https://picsum.photos/107" alt="Video 8" width="100" height="100"></td>
-            </tr>
-            <tr>
-                <td><a href="#" target="_blank">Cybersecurity Lab Walkthrough</a></td>
-                <td>Using Wireshark to track down network packets and see cleartext data.</td>
-                <td>30:50</td>
-                <td><img src="https://picsum.photos/108" alt="Video 9" width="100" height="100"></td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Hero Portfolio Header -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Front-End Web Developer Portfolio</h1>
+            <p class="lead mb-4">Showcasing responsive design, modern UI frameworks, and clean code.</p>
+            <a href="#projects" class="btn btn-light btn-lg px-4 rounded-pill fw-semibold shadow-sm">Explore My Work</a>
+        </div>
+    </header>
 
-    <h3>Featured Video Embed</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main class="container my-5">
 
+        <!-- Advanced Content: Random Famous Quote Generator -->
+        <section class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="quote-box text-center">
+                    <h5 class="text-muted text-uppercase fs-6 mb-2"><i class="fa-solid fa-quote-left me-2"></i>Developer Inspiration</h5>
+                    <p id="quoteDisplay" class="fs-5 fst-italic mb-3">"Talk is cheap. Show me the code." — Linus Torvalds</p>
+                    <button onclick="generateQuote()" class="btn btn-dark btn-sm rounded-pill px-4">Generate New Quote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Assignments Grid -->
+        <section id="projects" class="mb-5">
+            <h2 class="text-center fw-bold mb-4">Course Assignment Directory</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">YouTube Video</h5><p class="card-text text-muted small">Embedded video layout styling and semantic markup.</p><a href="birthday/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Super Heroes</h5><p class="card-text text-muted small">CSS layouts and structured media presentation.</p><a href="superheroes/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Little Boxes</h5><p class="card-text text-muted small">Box model layout and positioning practice.</p><a href="boxes/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Horizontal Menu</h5><p class="card-text text-muted small">Custom navigation styling and display properties.</p><a href="horizontal/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Midterm (Pizza Site)</h5><p class="card-text text-muted small">Multi-page pizza parlor build with forms.</p><a href="midterm/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Photoshop to Code</h5><p class="card-text text-muted small">Translating mockups into precise HTML/CSS code.</p><a href="photoshop/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Happy Birthday JS</h5><p class="card-text text-muted small">Interactive JavaScript DOM manipulation.</p><a href="birthday/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Lottery Number Generator</h5><p class="card-text text-muted small">Randomized array logic and dynamic output.</p><a href="lotto/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Mad Libs</h5><p class="card-text text-muted small">User input handling and string manipulation.</p><a href="madlibs/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Pizza Strap</h5><p class="card-text text-muted small">Upgrading the pizza site using Bootstrap 5 framework.</p><a href="pizza-strap/index.html" class="stretched-link"></a></div></div></div>
+                <div class="col-md-4"><div class="card card-custom h-100 p-4 shadow-sm"><div class="card-body"><h5 class="card-title fw-bold">Tic Tac Toe</h5><p class="card-text text-muted small">Full interactive game logic using vanilla JavaScript.</p><a href="ttt/index.html" class="stretched-link"></a></div></div></div>
+            </div>
+        </section>
+
+        <!-- Course Reflection Section -->
+        <section id="reflection" class="card shadow-sm border-0 p-5 rounded-4 bg-white mb-5">
+            <h2 class="fw-bold mb-4 text-center">Course Reflection</h2>
+            <p class="text-muted leading-relaxed">
+                The enrollment of CSIS 1430 has been a critical milestone in my journey of developing my practical front-end engineering skillset. I’ve transitioned from basic HTML layouts and CSS styling to responsive design, complex JS logic, and modern UI frameworks such as Bootstrap. I'm creating this portfolio to connect the dots from building multi-page sites to deploying live environments with GitHub. This course has increased my confidence in debugging code, independently researching technical documentation and developing sleek, user-friendly web interfaces.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0 text-white-50">&copy; 2026 Omar Gomez. Built for CSIS 1430 Capstone.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom Scripts for Advanced Requirements -->
+    <script>
+        // 1. Random Famous Quote Generator Script
+        const quotes = [
+            { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+            { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "Harold Abelson" },
+            { text: "Simplicity is prerequisite for reliability.", author: "Edsger W. Dijkstra" },
+            { text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author: "Martin Fowler" },
+            { text: "Premature optimization is the root of all evil.", author: "Donald Knuth" },
+            { text: "Web development is not just about making code work; it's about making experiences seamless.", author: "Industry Proverb" }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const selected = quotes[randomIndex];
+            document.getElementById("quoteDisplay").innerText = `"${selected.text}" — ${selected.author}`;
+        }
+
+        // 2. Natural Audio Component Toggle Script
+        function toggleAmbientAudio() {
+            const audio = document.getElementById("ambientAudio");
+            const icon = document.getElementById("audioIcon");
+            const text = document.getElementById("audioText");
+
+            if (audio.paused) {
+                audio.play();
+                icon.className = "fa-solid fa-volume-high me-1";
+                text.innerText = "Ambient Audio: On";
+            } else {
+                audio.pause();
+                icon.className = "fa-solid fa-volume-xmark me-1";
+                text.innerText = "Ambient Audio: Off";
+            }
+        }
+    </script>
 </body>
 </html>
